@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="light-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Conversation Script Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>WhatsApp Conversation Script Generator</h1>
+            <p>Generate realistic buyer-seller conversations for WhatsApp in English or Bahasa Malaysia</p>
+        </header>
+
+        <div class="api-key-section">
+            <h2>API Key Setup</h2>
+            <div class="input-group">
+                <label for="apiKey">OpenRouter API Key:</label>
+                <div class="tooltip-container">
+                    <input type="password" id="apiKey" placeholder="Enter your OpenRouter API key">
+                    <div class="tooltip">
+                        Enter your OpenRouter API key here. You can get one by signing up at openrouter.ai
+                    </div>
+                </div>
+                <button id="saveApiKey">Save API Key</button>
+            </div>
+            <div id="apiKeyStatus" class="status"></div>
+        </div>
+
+        <div class="input-section">
+            <h2>Script Details</h2>
+            <div class="input-group">
+                <label for="productDescription">Product/Service Description:</label>
+                <div class="tooltip-container">
+                    <textarea id="productDescription" placeholder="Describe your product or service in detail..."></textarea>
+                    <div class="tooltip">
+                        Provide detailed information about your product or service. Include features, benefits, pricing, and any other relevant details to generate a comprehensive conversation.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label>Select Language:</label>
+                <div class="radio-group">
+                    <input type="radio" id="english" name="language" value="english" checked>
+                    <label for="english">English</label>
+                    
+                    <input type="radio" id="bahasa" name="language" value="bahasa">
+                    <label for="bahasa">Bahasa Malaysia (Colloquial)</label>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button id="generateScript" class="primary-button">Generate WhatsApp Script</button>
+                <button id="clearForm">Clear</button>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" class="loading-indicator hidden">
+            <div class="spinner"></div>
+            <p>Generating your script...</p>
+        </div>
+
+        <div id="scriptOutput" class="output-section hidden">
+            <h2>Your WhatsApp Conversation Script</h2>
+            <div class="copy-button-container">
+                <button id="copyScript">Copy to Clipboard</button>
+            </div>
+            <div id="outputText"></div>
+
+            <div class="preview-section">
+                <h3>WhatsApp Preview</h3>
+                <div class="whatsapp-preview">
+                    <div id="chatPreview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+    </div>
+
+    <footer>
+        <p>© 2025 <a href="https://hanafihassan.com" target="_blank">hanafihassan.com</a> | <a href="https://github.com/xhanafix" target="_blank"><i class="fab fa-github"></i> github.com/xhanafix</a> | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
